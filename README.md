@@ -1,18 +1,18 @@
-# idtx-flow-project
+# entities-idtx-flow-project
 
-Headless test project for the idtx-flow GDExtension.
+A Godot test project that checks the idtx-flow extension's bake of blend-shape in-betweens.
 
+## What it is for
 
-This is a minimal Godot 4.5+ project for exercising the extension
-without an editor. Build the extension in `idtx-flow` (`scons`), which
-installs into `addons/IDTXFlow/`, then copy that folder here
-(it is gitignored — binaries are build outputs, not sources).
+The test plays a USD animation that keys a primary blend shape with one in-between, and fails unless both shapes sweep fully and trade places in phase.
 
-    godot --headless --path . --import
-    godot --headless --path . -s res://test_inbetween.gd
+## Run
 
-`inbetween_anim.usda` keys the primary 0 -> 1 -> 0 with one in-between authored
-at weight 0.5. The test demands both shapes sweep to ~1 AND that they trade
-places (in-between near 0 when the primary peaks): a bake without crossing-time
-keys leaves the in-between flat at 0, and an in-between wrongly given the
-primary's curve fails the phase check.
+Build [idtx-flow](https://github.com/V-Sekai-fire/idtx-flow) and copy the addon it installs into this project, then:
+
+    godot --path . --import
+    godot --path . --script res://test_inbetween.gd
+
+## Licence
+
+The licence is not stated.
