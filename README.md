@@ -15,4 +15,4 @@ Build [idtx-flow](https://github.com/V-Sekai-fire/idtx-flow) and copy the addon 
 
 ## Licence
 
-The licence is not stated.
+MIT. See [LICENSE](LICENSE).
